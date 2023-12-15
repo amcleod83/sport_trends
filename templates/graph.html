@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale = 1.0">
+    <title>Graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="myChart" width="1200" height="600px" ></canvas>
+
+    <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+
+    var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {{ labels|safe }},
+                datasets: [
+                    {
+                        label: 'Football',
+                        data: {{ football|safe }},
+                        borderColor: '#3333ff',
+                        lineTension: 0.1,
+                        fill: false
+                    },
+                    {
+                        label: 'Rugby', 
+                        data: {{ rugby|safe }},
+                        borderColor: '#ff3333',
+                        lineTension: 0.1,
+                        fill: false  
+                    },
+                    {
+                        label: 'Tennis',
+                        data: {{ tennis|safe }},  
+                        borderColor: '#33ff33',
+                        lineTension: 0.1,
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: false,
+            }
+        });
+    </script>
+</body>
+</html>
