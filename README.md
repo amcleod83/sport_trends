@@ -1,3 +1,11 @@
+## installation 
+
+clone this repo
+
+in terminal cd to that directory 
+
+follow these instructions
+
 ### Create a virtual environment.
 `python -m venv venv`
 
